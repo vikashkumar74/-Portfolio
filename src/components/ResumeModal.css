@@ -76,15 +76,18 @@
   color: var(--text-main);
 }
 
-/* Paper Document Preview */
-.resume-document-paper {
+.resume-pdf-viewer {
   flex-grow: 1;
-  overflow-y: auto;
-  padding: 40px;
+  min-height: 72vh;
   background: #ffffff;
-  color: #1e293b;
-  font-family: 'Times New Roman', Times, serif, sans-serif;
-  line-height: 1.5;
+}
+
+.resume-pdf-frame {
+  display: block;
+  width: 100%;
+  height: 72vh;
+  border: 0;
+  background: #ffffff;
 }
 
 .resume-doc-header {
@@ -201,30 +204,27 @@
   margin-bottom: 8px;
 }
 
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  .resume-document-paper, .resume-document-paper * {
-    visibility: visible;
-  }
-  .resume-document-paper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: 0;
-  }
-  .print-hide {
-    display: none;
-  }
-}
-
 @media (max-width: 640px) {
-  .resume-document-paper {
-    padding: 20px;
+  .resume-modal-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
   }
-  .doc-name {
-    font-size: 1.6rem;
+
+  .modal-actions {
+    width: 100%;
+    flex-wrap: wrap;
   }
+
+  .modal-btn {
+    flex: 1;
+    min-width: 130px;
+  }
+
+  .resume-pdf-viewer,
+  .resume-pdf-frame {
+    min-height: 70vh;
+    height: 70vh;
+  }
+
 }

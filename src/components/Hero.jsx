@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FileText, ArrowRight, Github, Linkedin, Code, MapPin, Mail, Sparkles, Terminal } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import { portfolioAssets } from '../data/portfolioAssets';
 import './Hero.css';
 
 export default function Hero({ onNavigate, onOpenResume }) {
+  const introText = "Hi, I'm";
+  const nameText = personalInfo.name;
+  const [typedIntro, setTypedIntro] = useState('');
+  const [typedName, setTypedName] = useState('');
+  const [typingComplete, setTypingComplete] = useState(false);
+
+  useEffect(() => {
+    const fullText = `${introText}\n${nameText}`;
+    let charIndex = 0;
+
+    const typingTimer = window.setInterval(() => {
+      charIndex += 1;
+      const visibleText = fullText.slice(0, charIndex);
+      const [intro = '', name = ''] = visibleText.split('\n');
+
+      setTypedIntro(intro);
+      setTypedName(name);
+
+      if (charIndex >= fullText.length) {
+        window.clearInterval(typingTimer);
+        setTypingComplete(true);
+      }
+    }, 75);
+
+    return () => window.clearInterval(typingTimer);
+  }, [introText, nameText]);
+
   const handleScrollToProjects = (e) => {
     e.preventDefault();
     onNavigate();
@@ -24,8 +52,8 @@ export default function Hero({ onNavigate, onOpenResume }) {
     
     // Direct PDF file download
     const link = document.createElement('a');
-    link.href = '/Vikash_Kumar_Resume.pdf';
-    link.download = 'Vikash_Kumar_Resume.pdf';
+    link.href = portfolioAssets.resumePdf;
+    link.download = portfolioAssets.resumeFileName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -43,8 +71,14 @@ export default function Hero({ onNavigate, onOpenResume }) {
             <span>Available for Software Engineering Roles</span>
           </div>
 
-          <h1 className="hero-title">
-            Hi, I'm <span className="gradient-text">{personalInfo.name}</span>
+          <h1 className="hero-title" aria-label={`${introText} ${nameText}`}>
+            <span className="hero-title-intro" aria-hidden="true">{typedIntro}</span>
+            <span
+              className={`hero-title-name gradient-text ${typingComplete ? 'typing-complete' : ''}`}
+              aria-hidden="true"
+            >
+              {typedName}
+            </span>
           </h1>
 
           <h2 className="hero-subtitle">{personalInfo.title}</h2>
@@ -116,7 +150,7 @@ export default function Hero({ onNavigate, onOpenResume }) {
             <div className="profile-image-container">
               <div className="profile-glow-ring"></div>
               <img
-                src="/profile.jpg"
+                src={portfolioAssets.profilePhoto}
                 alt="Vikash Kumar"
                 className="profile-img"
               />

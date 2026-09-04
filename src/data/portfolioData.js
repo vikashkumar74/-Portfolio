@@ -1,3 +1,5 @@
+import { portfolioAssets } from './portfolioAssets';
+
 export const personalInfo = {
   name: "VIKASH KUMAR",
   title: "Software Developer",
@@ -73,7 +75,7 @@ export const projectsData = [
     hasCode: false,
     hasLive: false,
     initialLikes: 142,
-    image: "/woocommerce-rma.png"
+    image: portfolioAssets.projectImages.woocommerceRma
   },
   {
     id: "wp-store-locator",
@@ -89,7 +91,7 @@ export const projectsData = [
     hasCode: false,
     hasLive: false,
     initialLikes: 128,
-    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80"
+    image: portfolioAssets.projectImages.storeLocator
   },
   {
     id: "employee-database",
@@ -108,7 +110,7 @@ export const projectsData = [
     github: "https://github.com/vikashkumar74/employee-database",
     liveDemo: "https://github.com/vikashkumar74/employee-database",
     initialLikes: 189,
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+    image: portfolioAssets.projectImages.employeeDatabase
   },
   {
     id: "collaborative-editor",
@@ -127,7 +129,7 @@ export const projectsData = [
     github: "https://github.com/vikashkumar74/Real-Time-Collaborative-Code-Editor",
     liveDemo: "https://github.com/vikashkumar74/Real-Time-Collaborative-Code-Editor",
     initialLikes: 234,
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+    image: portfolioAssets.projectImages.collaborativeEditor
   }
 ];
 
