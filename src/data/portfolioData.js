@@ -15,7 +15,7 @@ export const personalInfo = {
 };
 
 export const skillsData = {
-  "Languages": ["C++", "PHP", "JavaScript", "HTML", "CSS", "SQL"],
+  "Languages": ["C++", "PHP", "JavaScript", "HTML", "SQL"],
   "Frameworks/Libraries": ["React.js", "Node.js", "Express.js", "Redux", "Socket.io"],
   "Databases": ["MySQL", "MongoDB"],
   "Commerce Platforms": ["WordPress/WooCommerce"],
@@ -71,7 +71,7 @@ export const projectsData = [
       "Worked on WooCommerce RMA (Return Merchandise Authorization), supporting return, refund, replacement, cancellation, wallet refund, cashback, and request-management workflows.",
       "Contributed to RMA updates including analytics dashboards, advanced search/filtering, sorting, pagination, CSV export, bulk actions, and refreshed admin/customer UI."
     ],
-    tech: ["PHP", "MySQL", "WordPress/WooCommerce", "JavaScript", "HTML", "CSS"],
+    tech: ["PHP", "MySQL", "WordPress/WooCommerce", "JavaScript", "HTML"],
     hasCode: false,
     hasLive: false,
     initialLikes: 142,
@@ -87,7 +87,7 @@ export const projectsData = [
       "Developed and maintained store locator features for physical store management, store listings, and customer location-based search.",
       "Implemented product-stock allocation and search by city or zip code to help customers find nearby stores with available products."
     ],
-    tech: ["PHP", "MySQL", "WordPress", "JavaScript", "HTML", "CSS"],
+    tech: ["PHP", "MySQL", "WordPress", "JavaScript", "HTML",],
     hasCode: false,
     hasLive: false,
     initialLikes: 128,

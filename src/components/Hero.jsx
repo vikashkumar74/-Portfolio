@@ -177,7 +177,7 @@ export default function Hero({ onNavigate, onOpenResume }) {
                     <span className="code-keyword">const</span> developer = &#123;<br />
                     {"  "}name: <span className="code-string">'{personalInfo.name}'</span>,<br />
                     {"  "}role: <span className="code-string">'{personalInfo.title}'</span>,<br />
-                    {"  "}stack: [<span className="code-string">'React.js'</span>, <span className="code-string">'Node.js'</span>, <span className="code-string">'PHP'</span>, <span className="code-string">'MySQL'</span>, <span className="code-string">'MongoDB'</span>],<br />
+                    {"  "}stack: [<span className="code-string">'React.js'</span>, <span className="code-string">'Node.js'</span>, <span className="code-string">'PHP'</span>, <span className="code-string">'MySQL'</span>],<br />
                     {"  "}status: <span className="code-string">'Production Ready'</span><br />
                     &#125;;
                   </code>
